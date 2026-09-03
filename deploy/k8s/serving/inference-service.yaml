@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aggregation-inference-service
+spec:
+  type: ClusterIP
+  selector:
+    app: aggregation-inference
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

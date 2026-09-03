@@ -1,0 +1,53 @@
+experiment:
+  name: "protein_drug_aggregation_prediction"
+  tracking_uri: "http://localhost:5000"
+  random_seed: 42
+
+data:
+  parquet_source_path: "s3a://feature-store/protein_drug_curated/"
+  test_split_ratio: 0.2
+  val_split_ratio: 0.1
+  target_column: "target_inhibition_pct"
+  classification_threshold_pct: 70.0  # >= 70% categorized as potent INHIBITOR
+
+features:
+  drug:
+    fingerprint_type: "morgan"
+    radius: 2
+    n_bits: 1024
+  protein:
+    hydropathy_scale: "kyte_doolittle"
+    sequence_max_length: 1000
+    amino_acid_alphabet_size: 21  # 20 standard AA + 1 unknown/pad
+    embedding_dim: 64
+  assay_conditions:
+    features: ["temp_c", "solution_ph", "drug_conc_um"]
+    scaling: "standard"
+
+model:
+  architecture: "MultimodalFusionNet"
+  drug_branch:
+    input_dim: 1024
+    hidden_dims: [512, 256]
+    dropout: 0.2
+  protein_branch:
+    cnn_filters: [64, 128]
+    kernel_sizes: [7, 5]
+    pooling: "adaptive_max"
+    projection_dim: 128
+  fusion:
+    dense_layers: [256, 128, 64]
+    dropout: 0.3
+    output_dim: 1  # Continuous inhibition percentage
+
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  epochs: 50
+  early_stopping_patience: 8
+  scheduler:
+    type: "ReduceLROnPlateau"
+    mode: "min"
+    factor: 0.5
+    patience: 3

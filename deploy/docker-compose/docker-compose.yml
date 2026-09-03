@@ -1,0 +1,136 @@
+services:
+  # 1. ZOOKEEPER (Kafka Coordination)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: bio_zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - bio-network
+
+  # 2. KAFKA BROKER
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: bio_kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    networks:
+      - bio-network
+
+  # 3. MINIO S3 LAKEHOUSE
+  minio:
+    image: minio/minio:RELEASE.2024-01-18T22-51-28Z
+    container_name: bio_minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - bio-network
+
+# 4. MINIO BUCKET SETUP AUTOMATOR
+  minio-create-buckets:
+    image: minio/mc:RELEASE.2024-01-16T16-06-34Z
+    container_name: bio_minio_init
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until (/usr/bin/mc alias set myminio http://minio:9000 minioadmin minioadmin); do
+        echo 'Waiting for MinIO service initialization...';
+        sleep 2;
+      done;
+      /usr/bin/mc mb myminio/feature-store || true;
+      /usr/bin/mc mb myminio/spark-checkpoints || true;
+      /usr/bin/mc anonymous set download myminio/feature-store;
+      echo 'MinIO buckets successfully initialized.';
+      exit 0;
+      "
+    networks:
+      - bio-network
+
+# 5. SPARK MASTER
+  spark-master:
+    image: bitnamilegacy/spark:3.5.1
+    container_name: bio_spark_master
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - ../../:/workspace
+    networks:
+      - bio-network
+
+  # 6. SPARK WORKER
+  spark-worker:
+    image: bitnamilegacy/spark:3.5.1
+    container_name: bio_spark_worker
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    volumes:
+      - ../../:/workspace
+    ports:
+      - "8081:8081"
+    networks:
+      - bio-network
+
+# 7. MLFLOW TRACKING SERVER
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.17.0
+    container_name: bio_mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      - MLFLOW_S3_ENDPOINT_URL=http://minio:9000
+      - AWS_ACCESS_KEY_ID=minioadmin
+      - AWS_SECRET_ACCESS_KEY=minioadmin
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow.db
+      --default-artifact-root s3://feature-store/mlflow-artifacts/
+      --host 0.0.0.0
+      --port 5000
+    depends_on:
+      - minio
+    networks:
+      - bio-network
+
+networks:
+  bio-network:
+    driver: bridge
+
+volumes:
+  minio_data:

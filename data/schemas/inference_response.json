@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AggregationInferenceResponse",
+  "type": "object",
+  "required": [
+    "assay_id",
+    "protein_id",
+    "drug_id",
+    "model_version",
+    "prediction",
+    "latency_ms",
+    "timestamp"
+  ],
+  "properties": {
+    "assay_id": { "type": "string" },
+    "protein_id": { "type": "string" },
+    "drug_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "prediction": {
+      "type": "object",
+      "required": ["predicted_inhibition_pct", "predicted_class", "confidence_score"],
+      "properties": {
+        "predicted_inhibition_pct": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "predicted_class": {
+          "type": "string",
+          "enum": ["INHIBITOR", "AGGREGATOR", "INACTIVE"]
+        },
+        "confidence_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "latency_ms": { "type": "number", "minimum": 0.0 },
+    "timestamp": { "type": "integer" }
+  }
+}

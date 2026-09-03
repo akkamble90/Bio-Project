@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+env/
+
+# Environment variables & secrets
+.env
+.env.local
+
+# Spark & DuckDB local artifacts
+data/spark-warehouse/
+spark-warehouse/
+metastore_db/
+derby.log
+*.duckdb
+*.duckdb.tmp
+
+# Parquet local lakehouse writes
+*.parquet
+checkpoint/
+spark-checkpoints/
+
+# PyTorch checkpoints (track architecture, ignore heavy weights if desired)
+models/*.pt
+models/*.pth
+!models/.gitkeep
+
+# MLflow tracking
+mlruns/
+mlartifacts/
+
+# Testing & IDEs
+.pytest_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+*.swp!models/fusion_net.pt

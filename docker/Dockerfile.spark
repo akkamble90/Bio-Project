@@ -1,0 +1,33 @@
+FROM apache/spark:3.5.3
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+# Install system dependencies required for scientific wheels
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install cheminformatics and vectorized transformation libraries
+RUN pip install --no-cache-dir \
+    "rdkit>=2024.3.5" \
+    "biopython>=1.84" \
+    "numpy>=1.26.4" \
+    "pyarrow>=17.0.0" \
+    "pandas>=2.2.3"
+
+# Pre-fetch Kafka and MinIO (S3A) connector JARs into Spark classpath
+ENV SPARK_HOME=/opt/apache/spark
+RUN curl -sS https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.3/spark-sql-kafka-0-10_2.12-3.5.3.jar -o $SPARK_HOME/jars/spark-sql-kafka-0-10_2.12-3.5.3.jar && \
+    curl -sS https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.5.1/kafka-clients-3.5.1.jar -o $SPARK_HOME/jars/kafka-clients-3.5.1.jar && \
+    curl -sS https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.3/spark-token-provider-kafka-0-10_2.12-3.5.3.jar -o $SPARK_HOME/jars/spark-token-provider-kafka-0-10_2.12-3.5.3.jar && \
+    curl -sS https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar -o $SPARK_HOME/jars/commons-pool2-2.11.1.jar && \
+    curl -sS https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar -o $SPARK_HOME/jars/hadoop-aws-3.3.4.jar && \
+    curl -sS https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar -o $SPARK_HOME/jars/aws-java-sdk-bundle-1.12.262.jar
+
+USER 1001
+WORKDIR /workspace

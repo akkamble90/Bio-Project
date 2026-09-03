@@ -1,0 +1,899 @@
+[
+  {
+    "assay_id": "EXP-AGGR-2026-46345",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL1089750",
+      "canonical_smiles": "CC1(C)[C@H]2CC[C@](C)(C2)[C@H]1NS(=O)(=O)c1ccc(F)cc1",
+      "molecular_weight": 311.42
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 19.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-57576",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL311039",
+      "canonical_smiles": "CC12CCC(C1)C(C)(C)C2NS(=O)(=O)c1ccc(F)cc1",
+      "molecular_weight": 311.42
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 31.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-57579",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL450926",
+      "canonical_smiles": "CC12CC[C@@H](C1)C(C)(C)[C@@H]2NS(=O)(=O)c1cccs1",
+      "molecular_weight": 299.46
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 47.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-58964",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL310242",
+      "canonical_smiles": "CC12CC[C@@H](C1)C(C)(C)[C@@H]2NS(=O)(=O)c1ccc(F)cc1",
+      "molecular_weight": 311.42
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 58.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-68886",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL74874",
+      "canonical_smiles": "CC12CC[C@@H](C1)C(C)(C)[C@@H]2NS(=O)(=O)c1ccc(Cl)cc1",
+      "molecular_weight": 327.88
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 26.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-75953",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL75183",
+      "canonical_smiles": "CC12CC[C@@H](C1)C(C)(C)[C@@H]2NS(=O)(=O)c1ccc(Br)cc1",
+      "molecular_weight": 372.33
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 24.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-88981",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL432343",
+      "canonical_smiles": "CC12CC[C@@H](C1)C(C)(C)[C@H]2NS(=O)(=O)c1ccc(F)cc1",
+      "molecular_weight": 311.42
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 0.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-90318",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL2114129",
+      "canonical_smiles": "CC1(C)[C@@H]2CC[C@@](C)(C2)[C@H]1NS(=O)(=O)c1ccc(F)cc1",
+      "molecular_weight": 311.42
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 0.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-31485",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL182896",
+      "canonical_smiles": "CCOC(=O)N1CCC(c2ccccc2)(S(=O)(=O)c2ccccc2)CC1",
+      "molecular_weight": 373.47
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 84.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05957",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL563",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccccc2)c(F)c1",
+      "molecular_weight": 244.26
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 30.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05975",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196279",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(Cl)c(Cl)c2)c(F)c1",
+      "molecular_weight": 313.15
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 87.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05984",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL195970",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2cc(Cl)cc(Cl)c2)c(F)c1",
+      "molecular_weight": 313.15
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 75.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05992",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL197456",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccccc2Cl)c(F)c1",
+      "molecular_weight": 278.71
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 13.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05994",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194098",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2cccc(Cl)c2)c(F)c1",
+      "molecular_weight": 278.71
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 58.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05996",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL193415",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(Cl)cc2)c(F)c1",
+      "molecular_weight": 278.71
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 55.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-05998",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL264006",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(C3CCCCC3)cc2)c(F)c1",
+      "molecular_weight": 326.41
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 79.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06009",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL195884",
+      "canonical_smiles": "Cc1ccc(-c2ccc(C(C)C(=O)O)cc2F)cc1",
+      "molecular_weight": 258.29
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 44.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06011",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL193971",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(C(F)(F)F)cc2)c(F)c1",
+      "molecular_weight": 312.26
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 60.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06022",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194686",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccccc2C(F)(F)F)c(F)c1",
+      "molecular_weight": 312.26
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 25.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06024",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194274",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2csc3ccccc23)c(F)c1",
+      "molecular_weight": 300.35
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 96.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06032",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL371875",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccsc2)c(F)c1",
+      "molecular_weight": 250.29
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 40.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06034",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194645",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccncc2)c(F)c1",
+      "molecular_weight": 245.25
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 11.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06036",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196321",
+      "canonical_smiles": "COc1ccc(-c2ccc(C(C)C(=O)O)cc2F)cc1",
+      "molecular_weight": 274.29
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 67.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06044",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196322",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc3c(c2)OCO3)c(F)c1",
+      "molecular_weight": 288.27
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 42.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06046",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL1394",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(O)cc2)c(F)c1",
+      "molecular_weight": 260.26
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 27.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06048",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL380778",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(OC3CCCCC3)cc2)c(F)c1",
+      "molecular_weight": 342.41
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 76.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06050",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL380778",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(OC3CCCCC3)cc2)c(F)c1",
+      "molecular_weight": 342.41
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 25.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06057",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL197202",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(-c3ccc(O)cc3)cc2)c(F)c1",
+      "molecular_weight": 336.36
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 75.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06067",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL426291",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(C(F)(F)F)cc2)cc1C(F)(F)F",
+      "molecular_weight": 362.27
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 57.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06072",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196691",
+      "canonical_smiles": "CC(C(=O)O)c1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+      "molecular_weight": 294.27
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 2.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06074",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194760",
+      "canonical_smiles": "O=C(O)C1(c2ccc(-c3ccccc3)c(F)c2)CC1",
+      "molecular_weight": 256.28
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 40.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06082",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196246",
+      "canonical_smiles": "O=C(O)C1(c2ccc(-c3ccc(C(F)(F)F)cc3)c(F)c2)CC1",
+      "molecular_weight": 324.27
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 55.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06100",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196945",
+      "canonical_smiles": "O=C(O)C1(c2ccc(-c3ccc(Cl)c(Cl)c3)c(F)c2)CC1",
+      "molecular_weight": 325.17
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 79.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06120",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL196946",
+      "canonical_smiles": "O=C(O)C1(c2ccc(-c3csc4ccccc34)c(F)c2)CC1",
+      "molecular_weight": 312.37
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 49.0,
+      "outcome": "INACTIVE"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06128",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL372751",
+      "canonical_smiles": "CC1(C)CCC(c2ccc(-c3ccc(C4(C(=O)O)CC4)cc3F)cc2)CC1",
+      "molecular_weight": 366.48
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 75.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06139",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL193634",
+      "canonical_smiles": "O=C(O)C1(c2ccc(-c3ccc(C4CCOCC4)cc3)c(F)c2)CC1",
+      "molecular_weight": 340.39
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 52.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06147",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL194692",
+      "canonical_smiles": "CC(C)(C(=O)O)c1ccc(-c2ccc(C(F)(F)F)cc2)c(F)c1",
+      "molecular_weight": 326.29
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 58.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06155",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL364738",
+      "canonical_smiles": "CC(C)(C(=O)O)c1ccc(-c2ccc(C3CCCCC3)cc2)c(F)c1",
+      "molecular_weight": 340.44
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 77.0,
+      "outcome": "INHIBITOR"
+    }
+  },
+  {
+    "assay_id": "EXP-AGGR-2026-06157",
+    "timestamp": 1772544000,
+    "protein": {
+      "uniprot_id": "P05067",
+      "name": "Amyloid-beta A4 protein (1-42)",
+      "sequence": "MLPGLALLLLAAWTARALEVPTDGNAGLLAEPQIAMFCGRLN"
+    },
+    "drug": {
+      "chembl_id": "CHEMBL364738",
+      "canonical_smiles": "CC(C)(C(=O)O)c1ccc(-c2ccc(C3CCCCC3)cc2)c(F)c1",
+      "molecular_weight": 340.44
+    },
+    "conditions": {
+      "temperature_celsius": 37.0,
+      "ph": 7.4,
+      "drug_concentration_umol": 20.0
+    },
+    "label": {
+      "inhibition_percentage": 47.0,
+      "outcome": "INACTIVE"
+    }
+  }
+]
