@@ -76,6 +76,7 @@ flowchart TD
     style F fill:#fce7f3,stroke:#db2777,stroke-width:2px
     style G fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
     style H fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+```
 
 ## Core Features
 - **Distributed Stream Processing:** Ingests biochemical assay telemetry via Kafka (`kafka:29092`) and calculates streaming chemical descriptors and windowed statistics using Spark Structured Streaming.
