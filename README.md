@@ -147,20 +147,29 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 ## Start Infrastrucute Services 
+
+##Terminal 1:Infrastructure & Spark Streaming Pipeline
+Pull and launch Kafka, Zookeeper, and MinIO in detached mode, then run the Spark streaming job once the containers are up
 docker compose -f deploy/docker-compose/docker-compose.yml up -d
+python -m src.etl_streaming.streaming_pipeline
 
-##Launch the Spark Streaming Engine:
-python -m src.streaming.spark_pipeline
 
-##Start the Mock Assay Stream Producer
-python -m src.streaming.producer
+##Terminal 2: Kafka Real-Time Consumer
+Listen for streaming events, decode messages, and route processed payloads
+python -m src.serving.kafka_consumer
 
-##Start the FastAPI Model Server
+##Terminal 3: Mock Assay Stream Producer
+Stream molecular assay events and ligand records at the specified rate interval
+python -m src.producer.kafka_producer 1.5
+
+
+##Terminal 4: FastAPI REST Services
+Host the PyTorch model serving layer and prediction endpoints
 uvicorn src.serving.app:app --host 0.0.0.0 --port 8000 --reload
 
-##Launch the Streamlit Research Workspace
-python -m streamlit run src/ui/app.py
-
+##Terminal 5: Interactive UI (Streamlit Dashboard)
+Start the frontend interface containing the RDKit molecule visualizer and agentic reasoning workflow
+streamlit run src/ui/app.py
 
 
 ### Clone the Repository
