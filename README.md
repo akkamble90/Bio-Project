@@ -46,28 +46,37 @@ This project builds an automated, real-time in-silico triage pipeline that conne
 
 
 ## Architecture Overview
-High-Throughput Biochemical Assays / SMILES ]
-│
-▼
-[ Apache Kafka Message Broker ]
-(raw-aggregation-events)
-│
-▼
-[ Apache Spark Structured Streaming ]
-│
-┌───────────┴───────────┐
-▼                       ▼
-[ MinIO S3 Lakehouse ]   [ Kafka Curated Topic ]
-(Parquet Feature Store)           │
-▼
-[ FastAPI Inference Server ]
-(PyTorch Multimodal Fusion)
-│
-▼
-[ LangGraph Multi-Agent Engine (Groq / GPT-OSS / Llama) ]
-│
-▼
-[ Streamlit Research Dashboard ]
+## Architecture Overview
+
+```mermaid
+flowchart TD
+    subgraph Ingestion["1. Streaming Ingestion"]
+        A[" High-Throughput Assay Streams / SMILES"] --> B["⚡ Apache Kafka Broker<br/><code>raw-aggregation-events</code>"]
+    end
+
+    subgraph Processing["2. Distributed Featurization"]
+        B --> C[" Apache Spark Structured Streaming"]
+    end
+
+    subgraph StorageInference["3. Storage & ML Inference"]
+        C --> D[" MinIO S3 Lakehouse<br/><code>s3a://feature-store/ (Parquet)</code>"]
+        C --> E[" Kafka Curated Stream"]
+        E --> F[" FastAPI Inference Server<br/>(PyTorch Multimodal Fusion)"]
+    end
+
+    subgraph AgentUI["4. Verification & Exploration"]
+        F --> G[" LangGraph Multi-Agent Engine<br/>(Groq: Llama 3.1 / GPT-OSS)"]
+        G --> H[" Streamlit Research Workspace"]
+        D -. Historical Lookup .-> H
+    end
+
+    style A fill:#f8fafc,stroke:#64748b,stroke-width:1px
+    style B fill:#e0f2fe,stroke:#0284c7,stroke-width:2px
+    style C fill:#ffedd5,stroke:#ea580c,stroke-width:2px
+    style D fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style F fill:#fce7f3,stroke:#db2777,stroke-width:2px
+    style G fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
+    style H fill:#dcfce7,stroke:#16a34a,stroke-width:2px
 
 ## Core Features
 - **Distributed Stream Processing:** Ingests biochemical assay telemetry via Kafka (`kafka:29092`) and calculates streaming chemical descriptors and windowed statistics using Spark Structured Streaming.
@@ -96,32 +105,40 @@ High-Throughput Biochemical Assays / SMILES ]
 
 ## Project Structure
 
-.
-├── .env.example                    # Sample environment configuration
-├── requirements.txt                # Python dependencies
+```text
+Bio-Project/
+├── .env.example                  # Environment template
+├── requirements.txt              # Project Python dependencies
+├── docker-compose.yml            # Kafka, Zookeeper, and MinIO definitions
+├── models/
+│   └── fusion_net.pt             # Trained PyTorch late-fusion weights
+│
 ├── src/
-│   ├── common/
-│   │   ├── config.py               # Pydantic BaseSettings & env parsing
-│   │   └── logger.py               # Structured telemetry logging
-│   ├── streaming/
-│   │   ├── producer.py             # Mock Kafka biochemical assay producer
-│   │   └── spark_pipeline.py       # Spark streaming pipeline & lakehouse sink
-│   ├── serving/
-│   │   └── app.py                  # FastAPI inference service (PyTorch Late-Fusion)
-│   ├── agent/
-│   │   ├── graph.py                # LangGraph cyclic state machine
-│   │   └── nodes.py                # Analyst, Researcher, and Verifier agent nodes
-│   └── ui/
-│       ├── app.py                  # Main Streamlit dashboard
+│   ├── common/                   # Shared configurations and utilities
+│   │   ├── config.py             # Pydantic base settings & env variables
+│   │   └── logger.py             # Telemetry logging setup
+│   │
+│   ├── streaming/                # Distributed data streaming pipeline
+│   │   ├── producer.py           # Synthetic biochemical assay stream generator
+│   │   └── spark_pipeline.py     # Spark structured streaming & lakehouse sink
+│   │
+│   ├── serving/                  # Model inference and API layer
+│   │   └── app.py                # FastAPI server (PyTorch inference endpoints)
+│   │
+│   ├── agent/                    # Multi-agent verification loop
+│   │   ├── graph.py              # LangGraph cyclic state machine
+│   │   └── nodes.py              # Researcher, Critic, and Synthesizer agents
+│   │
+│   └── ui/                       # Research dashboard
+│       ├── app.py                # Main Streamlit dashboard entry point
 │       ├── style/
-│       │   └── custom.css          # Custom dashboard CSS styling
+│       │   └── custom.css        # Dashboard custom styling
 │       └── components/
-│           ├── chat_view.py        # Multi-agent verified research interface
-│           ├── assay_inspector.py  # Real-time stream telemetry
-│           └── molecule_viewer.py  # 2D RDKit viewer, Ro5 & hydropathy profiler
-└── models/
-└── fusion_net.pt                   # PyTorch model weights
-
+│           ├── chat_view.py      # Agentic chat interface
+│           ├── assay_inspector.py# Real-time Kafka telemetry monitor
+│           └── molecule_viewer.py# 2D RDKit viewer, Ro5 & hydropathy profiler
+│
+└── README.md
 ## Install dependencies
 python -m venv .venv
 source .venv/bin/activate
