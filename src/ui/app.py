@@ -1,15 +1,33 @@
 import os
-import streamlit as st
-import requests
+import sys
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from src.common.config import settings
-from src.ui.components.chat_view import render_chat_view
+
+# 0. Ensure project root is at the top of sys.path before importing internal packages
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+# Load .env file explicitly if present
+from dotenv import load_dotenv
+load_dotenv(PROJECT_ROOT / ".env")
+
+import requests
+import streamlit as st
+from src.common.config import settings
 from src.ui.components.assay_inspector import render_assay_inspector
+from src.ui.components.chat_view import render_chat_view
 from src.ui.components.molecule_viewer import render_molecule_viewer
 
 # 1. Page Configuration
 st.set_page_config(
     page_title="Protein Aggregation AI Platform",
-    page_icon="🧬",
+    page_icon=" ",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -32,7 +50,7 @@ def check_service_health(url: str) -> bool:
         return False
 
 minio_online = check_service_health(f"{settings.minio_endpoint}/minio/health/live")
-serving_online = check_service_health(f"http://localhost:8000/health")
+serving_online = check_service_health("http://localhost:8000/health")
 
 col_sb1, col_sb2 = st.sidebar.columns(2)
 col_sb1.metric("MinIO S3", "ONLINE" if minio_online else "OFFLINE")
@@ -54,9 +72,9 @@ st.markdown(
 
 # 5. Core Navigation Tabs
 tab_chat, tab_inspector, tab_mol = st.tabs([
-    " Verified Research Assistant",
-    " Assay & Stream Inspector",
-    " Molecular Structure & Drug-Likeness"
+    "🔬 Verified Research Assistant",
+    "📊 Assay & Stream Inspector",
+    "🧬 Molecular Structure & Drug-Likeness"
 ])
 
 with tab_chat:

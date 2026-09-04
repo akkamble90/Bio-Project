@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import from_json, col
@@ -10,6 +11,9 @@ from src.etl_streaming.udfs.sequence_features import hydropathy_udf, protein_bio
 from src.common.logger import get_logger
 
 logger = get_logger("SQLTransforms")
+
+# Resolve repository root (/workspace inside Docker, /workspaces/Bio-Project in Codespaces host)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 def get_raw_assay_schema() -> StructType:
     """Defines the Spark schema matching assay_event_schema.json."""
@@ -46,12 +50,12 @@ def register_biochemical_udfs(spark: SparkSession) -> None:
     spark.udf.register("calc_descriptors", chemical_descriptors_udf)
     spark.udf.register("calc_biophysics", protein_biophysics_udf)
 
-def load_sql_file(file_path: str) -> str:
+def load_sql_file(file_path: Path | str) -> str:
     """Reads raw SQL script from workspace."""
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"Missing SQL file at path: {file_path}")
-    with open(file_path, "r", encoding="utf-8") as f:
-        return f.read()
+    p = Path(file_path)
+    if not p.exists():
+        raise FileNotFoundError(f"Missing SQL file at path: {p.resolve()}")
+    return p.read_text(encoding="utf-8")
 
 def transform_streaming_batch(spark: SparkSession, kafka_df: DataFrame) -> DataFrame:
     """
@@ -67,15 +71,16 @@ def transform_streaming_batch(spark: SparkSession, kafka_df: DataFrame) -> DataF
     
     parsed_df.createOrReplaceTempView("raw_assay_events")
     
-    # 2. Run feature extraction SQL
-    feature_sql_path = os.path.join("sql", "create_features_views.sql")
-    if not os.path.exists(feature_sql_path):
-        feature_sql_path = os.path.join("sql", "create_feature_views.sql")
+    # 2. Run feature extraction SQL using absolute path
+    sql_dir = PROJECT_ROOT / "sql"
+    feature_sql_path = sql_dir / "create_features_views.sql"
+    if not feature_sql_path.exists():
+        feature_sql_path = sql_dir / "create_feature_views.sql"
         
     spark.sql(load_sql_file(feature_sql_path))
     
-    # 3. Run data quality filtering SQL
-    dq_sql_path = os.path.join("sql", "data_quality_checks.sql")
+    # 3. Run data quality filtering SQL using absolute path
+    dq_sql_path = sql_dir / "data_quality_checks.sql"
     spark.sql(load_sql_file(dq_sql_path))
     
     # 4. Return clean, validated dataset view

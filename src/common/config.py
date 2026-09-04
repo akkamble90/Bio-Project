@@ -14,7 +14,7 @@ class AppSettings(BaseSettings):
 
     # Groq LLM Settings
     groq_api_key: str = Field(default="", validation_alias="GROQ_API_KEY")
-    groq_model: str = Field(default="llama-3.3-70b-versatile", validation_alias="GROQ_MODEL")
+    groq_model: str = Field(default="openai/gpt-oss-120b", validation_alias="GROQ_MODEL")
     groq_temperature: float = Field(default=0.1, validation_alias="GROQ_TEMPERATURE")
     max_agent_cycles: int = Field(default=3, validation_alias="MAX_AGENT_CYCLES")
 
