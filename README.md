@@ -50,7 +50,7 @@ This project builds an automated, real-time in-silico triage pipeline that conne
 ```mermaid
 flowchart TD
     subgraph Ingestion["1. Streaming Ingestion"]
-        A["🔬 High-Throughput Assay Streams / SMILES"] --> B[" Apache Kafka Broker<br/>raw-aggregation-events"]
+        A[" High-Throughput Assay Streams / SMILES"] --> B[" Apache Kafka Broker<br/>raw-aggregation-events"]
     end
 
     subgraph Processing["2. Distributed Featurization"]
@@ -139,6 +139,8 @@ Bio-Project/
 │           └── molecule_viewer.py# 2D RDKit viewer, Ro5 & hydropathy profiler
 │
 └── README.md
+
+
 ## Install dependencies
 python -m venv .venv
 source .venv/bin/activate
