@@ -46,12 +46,11 @@ This project builds an automated, real-time in-silico triage pipeline that conne
 
 
 ## Architecture Overview
-## Architecture Overview
 
 ```mermaid
 flowchart TD
     subgraph Ingestion["1. Streaming Ingestion"]
-        A[" High-Throughput Assay Streams / SMILES"] --> B["⚡ Apache Kafka Broker<br/><code>raw-aggregation-events</code>"]
+        A["🔬 High-Throughput Assay Streams / SMILES"] --> B[" Apache Kafka Broker<br/>raw-aggregation-events"]
     end
 
     subgraph Processing["2. Distributed Featurization"]
@@ -59,7 +58,7 @@ flowchart TD
     end
 
     subgraph StorageInference["3. Storage & ML Inference"]
-        C --> D[" MinIO S3 Lakehouse<br/><code>s3a://feature-store/ (Parquet)</code>"]
+        C --> D[" MinIO S3 Lakehouse<br/>s3a://feature-store/ (Parquet)"]
         C --> E[" Kafka Curated Stream"]
         E --> F[" FastAPI Inference Server<br/>(PyTorch Multimodal Fusion)"]
     end
