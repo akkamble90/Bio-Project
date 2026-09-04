@@ -1,0 +1,4 @@
+libxrender1
+libxext6
+libcairo2
+libgl1
